@@ -1,3 +1,3 @@
 #! /bin/bash
 cd ~/Documents
-python tiny_div.py
+python auto_tiny.py

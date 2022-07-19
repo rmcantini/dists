@@ -2,7 +2,6 @@
 python script to automate tiniypng.com using the tinify api
 '''
 import json
-from ntpath import join
 import os
 import tkinter as tk
 from tkinter.filedialog import askdirectory
@@ -56,10 +55,9 @@ def compress_image(image_source, output_file_path):
 
 
 # finds the json API and reads it
-cwd = os.getcwd()
-os.chdir(os.path.join(cwd, 'auto_tiny/.api'))
+os.chdir(r'/Users/rodrigocantini/Documents/CODE/auto_tiny/.secrets')
 api_key = json.loads(
-    open('api_key_divvino.json', encoding='utf-8').read())['API_KEY']
+    open('api_key.json', encoding='utf-8').read())['API_KEY']
 tinify.key = api_key
 
 
@@ -78,7 +76,7 @@ size_of_file = [
 try:
     # Iterates over a list of files along with size
     for f, s in size_of_file:
-        MAX_SIZE = 150000
+        MAX_SIZE = 250000
 
         # Checks if the file is too heavy
         if s >= MAX_SIZE:
